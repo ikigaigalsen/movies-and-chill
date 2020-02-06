@@ -11,6 +11,12 @@
     z-index: 1;
     border-radius: 5px;
     box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.6);
+    transition: box-shadow 200ms ease-in-out, filter 200ms ease-in-out ;
+
+    &:hover {
+      box-shadow: 0 0 20px 2px rgba(0, 0, 0, 0.7);
+      filter: brightness(40%);
+    }
   }
 
   .movieText {
@@ -18,7 +24,23 @@
     z-index: 2;
     color: white;
     text-align: center;
-    bottom: 2px;
+  }
+
+  .movieTitle {
+    @extend .movieText;
     width: 146px;
+    bottom: 2px;
+  }
+
+  .movieYear {
+    @extend .movieText;
+    left: 2px;
+    text-align: left;
+  }
+
+  .movieRating {
+    @extend .movieText;
+    right: 2px;
+    text-align: right;
   }
 }
