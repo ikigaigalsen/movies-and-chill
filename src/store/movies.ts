@@ -1,11 +1,19 @@
 import { createModel } from "@rematch/core";
+import { api } from "./api";
+import { ITreading } from "./types";
 
-export const movies = createModel({
-  state: {},
+export const movies = createModel<{ treading: ITreading }>({
+  state: {
+    treading: { page: 0, total_results: 0, total_pages: 0, results: [] }
+  },
   reducers: {
-    // TODO: Add reducers
+    setTreadingMovies: (state, payload) => ({ ...state, treading: payload })
   },
   effects: {
-    // TODO: Add reducers
+    async fetchTrendingMovies() {
+      const { data } = await api("discover/movie");
+
+      this.setTreadingMovies(data);
+    }
   }
 });
