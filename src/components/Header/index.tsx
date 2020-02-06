@@ -6,9 +6,23 @@ import { Link } from "react-router-dom";
 const Header: React.FC = () => {
   return (
     <div className={styles.header}>
-      <Link to="/">Home</Link>
-      <Link to="/movies">Movies</Link>
-      <Link to="/actors">Actors</Link>
+      <div className={styles.logo}>
+        <h3>Movies and Chill</h3>
+      </div>
+      <div className={styles.navigation}>
+        <Link className={styles.links} to="/">
+          Home
+        </Link>
+        <Link className={styles.links} to="/movies">
+          Movies
+        </Link>
+        <Link className={styles.links} to="/actors">
+          Actors
+        </Link>
+        {
+          // TODO add search bar
+        }
+      </div>
     </div>
   );
 };
