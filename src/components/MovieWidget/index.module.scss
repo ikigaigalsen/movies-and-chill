@@ -1,0 +1,24 @@
+.movieBox {
+  position: relative;
+  width: 146px;
+  height: 220px;
+  margin: 20px;
+
+  .poster {
+    position: absolute;
+    width: 146px;
+    height: 220px;
+    z-index: 1;
+    border-radius: 5px;
+    box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.6);
+  }
+
+  .movieText {
+    position: absolute;
+    z-index: 2;
+    color: white;
+    text-align: center;
+    bottom: 2px;
+    width: 146px;
+  }
+}

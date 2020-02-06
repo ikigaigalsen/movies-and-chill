@@ -29,9 +29,7 @@ const Routes: React.FC = () => {
       <Header />
       <Switch>
         {RoutesList.map(({ path, Component }) => (
-          <Route key={path} path={path} exact>
-            {Component}
-          </Route>
+          <Route key={path} path={path} exact render={() => <Component />} />
         ))}
       </Switch>
     </Router>
