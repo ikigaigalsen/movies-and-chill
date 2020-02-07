@@ -2,9 +2,8 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { TDispatch, TRootState } from "../../store";
 
-import styles from "./index.module.scss";
 import MovieWidget from "../../components/MovieWidget";
-import { IMoviesList, ITreadingPeople } from "../../store/types";
+import { IMoviesList, IPeopleList } from "../../store/types";
 import PersonWidget from "../../components/PersonWidget";
 import WidgetContainer from "../../components/WidgetContainer";
 
@@ -12,7 +11,7 @@ const Home: React.FC = () => {
   const treadingMovies = useSelector<TRootState, IMoviesList>(
     state => state.movies.treading
   );
-  const treadingPeople = useSelector<TRootState, ITreadingPeople>(
+  const treadingPeople = useSelector<TRootState, IPeopleList>(
     state => state.people.treading
   );
 

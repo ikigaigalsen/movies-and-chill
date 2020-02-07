@@ -48,7 +48,7 @@ export interface IPerson {
   known_for: IPersonKnownFor[];
 }
 
-export interface ITreadingPeople {
+export interface IPeopleList {
   page: number;
   total_results: number;
   total_pages: number;

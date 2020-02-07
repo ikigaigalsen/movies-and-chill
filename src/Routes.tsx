@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Movies from "./pages/Movies";
-import Actors from "./pages/Actors";
+import People from "./pages/People";
 import Header from "./components/Header";
 
 /**
@@ -18,8 +18,8 @@ const RoutesList = [
     Component: Movies
   },
   {
-    path: "/actors",
-    Component: Actors
+    path: "/people",
+    Component: People
   }
 ];
 

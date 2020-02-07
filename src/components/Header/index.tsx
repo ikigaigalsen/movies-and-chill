@@ -16,8 +16,8 @@ const Header: React.FC = () => {
         <Link className={styles.links} to="/movies">
           Movies
         </Link>
-        <Link className={styles.links} to="/actors">
-          Actors
+        <Link className={styles.links} to="/people">
+          People
         </Link>
         {
           // TODO add search bar
