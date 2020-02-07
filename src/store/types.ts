@@ -49,8 +49,8 @@ export interface IPerson {
 }
 
 export interface ITreadingPeople {
-  page: 1;
-  total_results: 10000;
-  total_pages: 500;
+  page: number;
+  total_results: number;
+  total_pages: number;
   results: IPerson[];
 }

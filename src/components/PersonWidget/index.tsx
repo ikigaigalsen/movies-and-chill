@@ -21,6 +21,8 @@ const PersonWidget: React.FC<IMovieWidgetProps> = ({ person }) => {
       <img
         className={styles.poster}
         src={
+          // If profile picture is not available add 
+          // a placeholder image
           person.profile_path
             ? `${IMAGE_URL}/w500/${person.profile_path}`
             : "https://imgplaceholder.com/146x220/484848?text=No+Image"

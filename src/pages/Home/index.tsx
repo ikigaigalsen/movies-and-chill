@@ -18,9 +18,12 @@ const Home: React.FC = () => {
   const dispatch = useDispatch<TDispatch>();
 
   useEffect(() => {
-    dispatch.movies.fetchTrendingMovies();
-    dispatch.people.fetchTrendingPeople();
-  }, [dispatch.movies, dispatch.people]);
+    if (treadingMovies.total_results === 0)
+      dispatch.movies.fetchTrendingMovies();
+
+    if (treadingPeople.total_results === 0)
+      dispatch.people.fetchTrendingPeople();
+  }, [dispatch.movies, dispatch.people, treadingMovies, treadingPeople]);
 
   return (
     <div>
