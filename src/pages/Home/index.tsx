@@ -26,7 +26,7 @@ const Home: React.FC = () => {
   }, [dispatch.movies, dispatch.people, treadingMovies, treadingPeople]);
 
   return (
-    <div>
+    <div style={{ margin: "0 auto", width: 1200 }}>
       <WidgetContainer title={"Treading Movies"}>
         {treadingMovies.results.map(movie => (
           <MovieWidget key={movie.id} movie={movie} />

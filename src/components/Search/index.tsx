@@ -49,7 +49,7 @@ interface IMovieOptions extends IMovie {
 const Option = (props: any) => {
   console.log(props);
   return (
-    <Link to={`movies/${props.data.id}`}>
+    <Link to={`/movies/${props.data.id}`}>
       <components.Option {...props}>
         <div className={styles.searchOption}>
           <img

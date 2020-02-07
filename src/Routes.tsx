@@ -4,6 +4,7 @@ import Home from "./pages/Home";
 import Movies from "./pages/Movies";
 import People from "./pages/People";
 import Header from "./components/Header";
+import MovieDetails from "./pages/MovieDetail";
 
 /**
  * Extracting out the routes in an array makes the code easily managable and understandable
@@ -18,6 +19,10 @@ const RoutesList = [
     Component: Movies
   },
   {
+    path: "/movies/:movieId",
+    Component: MovieDetails
+  },
+  {
     path: "/people",
     Component: People
   }
@@ -29,7 +34,12 @@ const Routes: React.FC = () => {
       <Header />
       <Switch>
         {RoutesList.map(({ path, Component }) => (
-          <Route key={path} path={path} exact render={() => <Component />} />
+          <Route
+            key={path}
+            path={path}
+            exact
+            render={props => <Component {...props} />}
+          />
         ))}
       </Switch>
     </Router>

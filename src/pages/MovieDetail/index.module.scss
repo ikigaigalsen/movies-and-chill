@@ -1,0 +1,42 @@
+.root {
+  display: flex;
+  max-width: 1200px;
+  margin: 50px auto;
+  color: white;
+  flex-direction: column;
+
+
+  .firstRow {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .imageCon {
+    width: 320px;
+  }
+
+  .image {
+    width: 300px;
+  }
+
+  .details {
+    margin-left: 30px;
+  }
+
+  .title {
+    font-size: 3em;
+    font-weight: 500;
+    margin-bottom: 10px;
+  }
+
+  .subtitle {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+
+    & span {
+      font-size: 0.6em;
+      font-weight: 500;
+      text-transform: uppercase;
+    }
+  }
+}
