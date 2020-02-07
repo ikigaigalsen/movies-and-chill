@@ -16,7 +16,7 @@ const MovieWidget: React.FC<IMovieWidgetProps> = ({ movie }) => {
       <div className={styles.movieBox}>
         <div className={styles.movieTitle}>{movie.title}</div>
         <div className={styles.movieYear}>
-          {movie.release_date.split("-")[0]}
+          {movie.release_date?.split("-")[0]}
         </div>
         <div className={styles.movieRating}>{movie.vote_average}</div>
         <img

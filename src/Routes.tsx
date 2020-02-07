@@ -5,6 +5,7 @@ import Movies from "./pages/Movies";
 import People from "./pages/People";
 import Header from "./components/Header";
 import MovieDetails from "./pages/MovieDetail";
+import PersonDetail from "./pages/PersonDetail";
 
 /**
  * Extracting out the routes in an array makes the code easily managable and understandable
@@ -25,6 +26,10 @@ const RoutesList = [
   {
     path: "/people",
     Component: People
+  },
+  {
+    path: "/people/:personId",
+    Component: PersonDetail
   }
 ];
 

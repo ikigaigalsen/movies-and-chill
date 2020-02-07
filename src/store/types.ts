@@ -67,6 +67,7 @@ export interface IMoviesList {
   total_results: number;
   total_pages: number;
   results: IMovie[];
+  cast?: IMovie[];
 }
 
 interface IPersonKnownFor {
@@ -93,6 +94,23 @@ export interface IPerson {
   profile_path: null | string;
   adult: boolean;
   known_for: IPersonKnownFor[];
+}
+
+export interface IPersonFull {
+  birthday: string;
+  known_for_department: string;
+  deathday: null | string;
+  id: number;
+  name: string;
+  also_known_as: string[];
+  gender: 1 | 2;
+  biography: string;
+  popularity: number;
+  place_of_birth: string;
+  profile_path: string;
+  adult: boolean;
+  imdb_id: string;
+  homepage: null | string;
 }
 
 export interface IPeopleList {
