@@ -1,7 +1,8 @@
 import { init, RematchRootState } from "@rematch/core";
 import { movies } from "./movies";
+import { people } from "./people";
 
-const models = { movies };
+const models = { movies, people };
 
 /**
  * Since we are using Rematch (A Redux Framework), we don't need to

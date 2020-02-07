@@ -1,8 +1,8 @@
 import { createModel } from "@rematch/core";
 import { api } from "./api";
-import { ITreading } from "./types";
+import { ITreadingMovies } from "./types";
 
-export const movies = createModel<{ treading: ITreading }>({
+export const movies = createModel<{ treading: ITreadingMovies }>({
   state: {
     treading: { page: 0, total_results: 0, total_pages: 0, results: [] }
   },
