@@ -1,4 +1,4 @@
-import axios, { AxiosResponse } from "axios";
+import axios, { AxiosResponse, AxiosRequestConfig } from "axios";
 import { BASE_URL, AUTH_TOKEN, API_KEY } from "../constants/api";
 
 const apiBase = axios.create({
@@ -7,9 +7,12 @@ const apiBase = axios.create({
   headers: { Authorization: AUTH_TOKEN }
 });
 
-type TApi = (url: string) => Promise<AxiosResponse<any>>;
+type TApi<R = any> = (
+  url: string,
+  params?: AxiosRequestConfig["params"]
+) => Promise<AxiosResponse<R>>;
 
-const api: TApi = async url =>
-  await apiBase.get(url, { params: { api_key: API_KEY } });
+const api: TApi = async (url, params = {}) =>
+  await apiBase.get(url, { params: { api_key: API_KEY, ...params } });
 
 export { api };

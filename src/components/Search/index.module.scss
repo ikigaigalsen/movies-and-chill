@@ -1,0 +1,29 @@
+.searchContainer {
+  width: 300px;
+  margin: auto 10px;
+
+  & :global(.select__menu) {
+    z-index: 10;
+    color: black;
+  }
+}
+
+.searchOption {
+  display: flex;
+
+  .image {
+    width: 60px;
+    margin: 5px;
+  }
+
+  .text {
+    flex-grow: 1;
+    margin: 5px;
+    text-decoration: none !important;
+    color: black;
+  }
+
+  .year {
+    font-size: 0.8em;
+  }
+}
