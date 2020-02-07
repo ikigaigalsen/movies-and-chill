@@ -4,11 +4,12 @@ import { TDispatch, TRootState } from "../../store";
 
 import styles from "./index.module.scss";
 import MovieWidget from "../../components/MovieWidget";
-import { ITreadingMovies, ITreadingPeople } from "../../store/types";
+import { IMoviesList, ITreadingPeople } from "../../store/types";
 import PersonWidget from "../../components/PersonWidget";
+import WidgetContainer from "../../components/WidgetContainer";
 
 const Home: React.FC = () => {
-  const treadingMovies = useSelector<TRootState, ITreadingMovies>(
+  const treadingMovies = useSelector<TRootState, IMoviesList>(
     state => state.movies.treading
   );
   const treadingPeople = useSelector<TRootState, ITreadingPeople>(
@@ -27,24 +28,17 @@ const Home: React.FC = () => {
 
   return (
     <div>
-      <div className={styles.moviesContainer}>
-        <div className={styles.title}>Treading Movies</div>
+      <WidgetContainer title={"Treading Movies"}>
+        {treadingMovies.results.map(movie => (
+          <MovieWidget key={movie.id} movie={movie} />
+        ))}
+      </WidgetContainer>
 
-        <div className={styles.body}>
-          {treadingMovies.results.map(movie => (
-            <MovieWidget key={movie.id} movie={movie} />
-          ))}
-        </div>
-      </div>
-      <div className={styles.moviesContainer}>
-        <div className={styles.title}>Treading People</div>
-
-        <div className={styles.body}>
-          {treadingPeople.results.map(person => (
-            <PersonWidget key={person.id} person={person} />
-          ))}
-        </div>
-      </div>
+      <WidgetContainer title={"Treading People"}>
+        {treadingPeople.results.map(person => (
+          <PersonWidget key={person.id} person={person} />
+        ))}
+      </WidgetContainer>
     </div>
   );
 };

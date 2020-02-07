@@ -15,7 +15,7 @@ export interface IMovie {
   release_date: string;
 }
 
-export interface ITreadingMovies {
+export interface IMoviesList {
   page: number;
   total_results: number;
   total_pages: number;
