@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from "react";
+import React, { useState, useEffect } from "react";
 import { RouteComponentProps } from "react-router-dom";
 
 import styles from "./index.module.scss";
@@ -74,16 +74,18 @@ const MovieDetails: React.FC<RouteComponentProps<{
         </div>
       </div>
       {reviews && (
-        <div>
-          <div>User Reviews</div>
-          {reviews.results.length !== 0
-            ? reviews.results?.map(review => (
-                <div key={review.id}>
-                  <div>{review.author}</div>
-                  <div>{review.content}</div>
-                </div>
-              ))
-            : "No user reviews"}
+        <div className={styles.section}>
+          <div className={styles.sectionTitle}>User Reviews</div>
+          {reviews.results.length !== 0 ? (
+            reviews.results?.map(review => (
+              <div key={review.id} className={styles.reviewBox}>
+                <div className={styles.reviewAuthor}>{review.author}</div>
+                <div className={styles.reviewContent}>{review.content}</div>
+              </div>
+            ))
+          ) : (
+            <div className={styles.reviewBox}>No user reviews</div>
+          )}
         </div>
       )}
       <WidgetContainer title={"Similar Movies"}>

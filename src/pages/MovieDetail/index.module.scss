@@ -9,6 +9,7 @@
   .firstRow {
     display: flex;
     flex-direction: row;
+    margin-bottom: 30px;
   }
 
   .imageCon {
@@ -38,5 +39,35 @@
       font-weight: 500;
       text-transform: uppercase;
     }
+  }
+
+  .section {
+    margin: 20px;
+  }
+
+  .sectionTitle {
+    display: inline-block;
+    margin-bottom: 3px;
+    color: #00acc1;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 1.5rem;
+    vertical-align: middle;
+  }
+
+  .reviewBox {
+    margin: 10px;
+    padding: 10px;
+    border-bottom: 1px solid  #343a48;
+  }
+
+  .reviewAuthor {
+    font-weight: 400;
+    font-size: 1.1em;
+    margin-bottom: 5px;
+  }
+
+  .reviewContent {
+    text-align: justify;
   }
 }
