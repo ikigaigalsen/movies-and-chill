@@ -32,7 +32,7 @@ const Movies: React.FC = () => {
   }, [dispatch.movies, treadingMovies, nowPlayingMovies, upComingMovies]);
 
   return (
-    <div style={{ margin: "0 auto", width: 1200 }}>
+    <div className="page-root">
       <WidgetContainer title={"Treading Movies"}>
         {treadingMovies.results.map(movie => (
           <MovieWidget key={movie.id} movie={movie} />

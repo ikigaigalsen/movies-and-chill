@@ -18,7 +18,7 @@ const People: React.FC = () => {
   }, [dispatch.people, treadingPeople]);
 
   return (
-    <div style={{margin: '0 auto', width: 1200 }}>
+    <div className="page-root">
       <WidgetContainer title={"Treading People"}>
         {treadingPeople.results.map(person => (
           <PersonWidget key={person.id} person={person} />
