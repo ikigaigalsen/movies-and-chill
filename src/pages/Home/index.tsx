@@ -6,6 +6,7 @@ import MovieWidget from "../../components/MovieWidget";
 import { IMoviesList, IPeopleList } from "../../store/types";
 import PersonWidget from "../../components/PersonWidget";
 import WidgetContainer from "../../components/WidgetContainer";
+import Carousel from "../../components/Carousel";
 
 const Home: React.FC = () => {
   const treadingMovies = useSelector<TRootState, IMoviesList>(
@@ -25,20 +26,27 @@ const Home: React.FC = () => {
       dispatch.people.fetchTrendingPeople();
   }, [dispatch.movies, dispatch.people, treadingMovies, treadingPeople]);
 
-  return (
-    <div className="page-root">
-      <WidgetContainer title={"Treading Movies"}>
-        {treadingMovies.results.map(movie => (
-          <MovieWidget key={movie.id} movie={movie} />
-        ))}
-      </WidgetContainer>
+  if (treadingMovies.results.length === 0) {
+    return <div>Loading..</div>;
+  }
 
-      <WidgetContainer title={"Treading People"}>
-        {treadingPeople.results.map(person => (
-          <PersonWidget key={person.id} person={person} />
-        ))}
-      </WidgetContainer>
-    </div>
+  return (
+    <>
+      <Carousel treadingMovies={treadingMovies} />
+      <div className="page-root">
+        <WidgetContainer title={"Treading Movies"}>
+          {treadingMovies.results.map(movie => (
+            <MovieWidget key={movie.id} movie={movie} />
+          ))}
+        </WidgetContainer>
+
+        <WidgetContainer title={"Treading People"}>
+          {treadingPeople.results.map(person => (
+            <PersonWidget key={person.id} person={person} />
+          ))}
+        </WidgetContainer>
+      </div>
+    </>
   );
 };
 
