@@ -2,9 +2,46 @@
   position: relative;
   width: 100vw;
   height: 720px;
+  overflow: hidden;
+
+  .imageWrap:before {
+    content: "";
+    background-image: linear-gradient(to top, #3b4150, rgba(239, 239, 239, 0));
+    position: absolute;
+    height: 200px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 2;
+  }
+
+  .imageWrap:after {
+    content: "";
+    display: block;
+    height: 9999px;
+  }
 
   .image {
     width: 100vw;
     position: absolute;
+    border: 0;
+    box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.2);
+    -ms-interpolation-mode: bicubic;
+  }
+
+  .text {
+    position: absolute;
+    bottom: 50px;
+    color: white;
+    padding: 0 50px;
+    z-index: 3;
+  }
+
+  .movieTitle {
+    font-size: 1.4em;
+  }
+
+  .rating {
+    font-size: 0.8em;
   }
 }
